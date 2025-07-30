@@ -49,4 +49,57 @@ def count_occurrences_iterative(data_list, target):
 
 
 # WRITE YOUR CODE BELOW
+def sum_of_digits(n):
+    """Recursively computes the sum of all digits in n with one return."""
+    result = 0
+    if n < 10:
+        result = n
+    else:
+        result = (n % 10) + sum_of_digits(n // 10)
+    return result
 
+
+def count_occurrences(data_list, target):
+    """Recursively counts target occurrences in data_list with one return."""
+    result = 0
+    if data_list:
+        result = (1 if data_list[0] == target else 0) + count_occurrences(data_list[1:], target)
+    return result
+
+
+def factorial_iterative(n):
+    """Computes n! iteratively using a loop."""
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+
+def fibonacci_iterative(n):
+    """Computes the nth Fibonacci number iteratively."""
+    if n == 1 or n == 2:
+        result = n
+    else:
+        first = 1  # F(1)
+        second = 2 # F(2)
+        for i in range(3, n + 1):
+            next_value = first + second
+            first = second
+            second = next_value
+        result = second
+    return result
+
+
+def fibonacci_iterative(n):
+    """Computes the nth Fibonacci number iteratively."""
+    if n == 1 or n == 2:
+        result = n
+    else:
+        first = 1  # F(1)
+        second = 2 # F(2)
+        for i in range(3, n + 1):
+            next_value = first + second
+            first = second
+            second = next_value
+        result = second
+    return result
